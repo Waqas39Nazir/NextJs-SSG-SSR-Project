@@ -1,8 +1,29 @@
 import React from "react";
-import ContentWrapper from "@/components/Layout/ContentWrapper";
 
-const index = () => {
-  return <h1>I am Blog</h1>;
+const Blog = async () => {
+  const fetchPostsHandler = async () => {
+    const fetchPosts = await fetch(
+      "https://jsonplaceholder.typicode.com/posts"
+    ).then((result) => {
+      const posts = result.json();
+
+      return posts;
+    });
+
+    return fetchPosts;
+  };
+
+  const posts = await fetchPostsHandler();
+
+  console.log("Blog Posts:", posts);
+  return (
+    <>
+      {posts.length > 0 &&
+        posts.map((post: any) => {
+          return <h1 key={post.id}>{post.title}</h1>;
+        })}
+    </>
+  );
 };
 
-export default index;
+export default Blog;
