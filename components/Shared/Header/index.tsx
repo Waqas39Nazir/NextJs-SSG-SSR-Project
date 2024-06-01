@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 const Header = () => {
   return (
@@ -9,12 +9,21 @@ const Header = () => {
 
       <nav className=" w-fit">
         <ul className="flex flex-row gap-8 w-fit">
-          <li>Page 1</li>
-          <li>Page 2</li>
-          <li>Page 3</li>
-          <li>Page 4</li>
-          <li>Page 5</li>
-          <li>Page 6</li>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </li>
+          <li>
+            <Link href="/contact-us">Contact Us</Link>
+          </li>
         </ul>
       </nav>
     </header>

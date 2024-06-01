@@ -11,10 +11,9 @@ type Props = {
 const SingleBlogSection = ({ id, title, image }: Props) => {
   const { handler } = useContext(BlogContext);
 
-  console.log("Blog Id:", id);
-
   const onClickHandler = (id: number) => {
-    handler(id);
+    console.log("Blog Id:", id);
+    handler(id - 1);
   };
   return (
     <div

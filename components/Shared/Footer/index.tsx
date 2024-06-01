@@ -8,30 +8,30 @@ const Footer = () => {
       <h1 className=" text-2xl">LOGO</h1>
       <ul className="flex flex-col gap-3">
         <li>
-          <Link className="" href="#">
-            Page 1
+          <Link className="" href="/">
+            Home
           </Link>
         </li>
         <li>
-          <Link className="" href="#">
-            Page 2
+          <Link className="" href="/blog">
+            Blog
           </Link>
         </li>
         <li>
-          <Link className="" href="#">
-            Page 3
+          <Link className="" href="/about">
+            About
           </Link>
         </li>
       </ul>
       <ul className="flex flex-col gap-3">
         <li>
-          <Link className="" href="#">
-            Page 4
+          <Link className="" href="/contact-us">
+            Contact Us
           </Link>
         </li>
         <li>
-          <Link className="" href="#">
-            Page 5
+          <Link className="" href="/privacy-policy">
+            Privacy Policy
           </Link>
         </li>
       </ul>
