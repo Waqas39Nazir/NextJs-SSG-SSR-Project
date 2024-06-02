@@ -3,12 +3,6 @@ import React, { useState, createContext } from "react";
 import Blog from "@/components/Blog";
 import RelatedBlogs from "@/components/RelatedBlogs";
 
-// Define the shape of the context value
-interface BlogContextType {
-  id: number;
-  handler: (id: number) => void;
-}
-
 // Create the context with the appropriate type
 export const BlogContext = createContext<any>(0);
 
