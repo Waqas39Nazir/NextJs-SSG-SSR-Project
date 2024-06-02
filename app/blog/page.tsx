@@ -1,4 +1,5 @@
 import React from "react";
+import BlogClientComponent from "@/components/BlogClientComponent";
 
 const Blog = async () => {
   const fetchPostsHandler = async () => {
@@ -17,12 +18,9 @@ const Blog = async () => {
 
   console.log("Blog Posts:", posts);
   return (
-    <>
-      {posts.length > 0 &&
-        posts.map((post: any) => {
-          return <h1 key={post.id}>{post.title}</h1>;
-        })}
-    </>
+    <div className=" p-8 rounded border flex flex-col gap-6">
+      <BlogClientComponent posts={posts} />
+    </div>
   );
 };
 
