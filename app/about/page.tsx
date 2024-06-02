@@ -17,7 +17,9 @@ const About = () => {
     );
   };
 
-  console.log("Posts:", posts);
+  console.log(
+    "Client Side Rendering using useEffect, See in Page source whether the code in included or not"
+  );
 
   useEffect(() => {
     fetchPostsHandler();
