@@ -6,8 +6,10 @@ import RelatedBlogs from "@/components/RelatedBlogs";
 // Create the context with the appropriate type
 export const BlogContext = createContext<any>(0);
 
-const BlogPage = () => {
+const HomePageBlogs = () => {
   const [blogId, setBlogId] = useState(0);
+
+  console.log("Client Side Component");
 
   const updateBlogIdHandler = (id: number) => {
     setBlogId(id);
@@ -22,4 +24,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default HomePageBlogs;
