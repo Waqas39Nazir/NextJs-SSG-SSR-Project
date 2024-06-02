@@ -2,12 +2,20 @@ import React from "react";
 import DUMMY_BLOGS from "@/utils/JSON/Blog.json";
 import Image from "next/image";
 
-type Props = {
-  blogId: string;
-  params: { blogId: string };
-};
+// type Props = {
+//   blogId: string;
+//   params: { blogId: string };
+// };
 
-const blogDetailsPage = ({ blogId, params }: Props) => {
+interface Params {
+  blogId: string;
+}
+
+interface Props {
+  params: Params;
+}
+
+const blogDetailsPage = ({ params }: Props) => {
   const id = parseInt(params.blogId);
 
   return (
