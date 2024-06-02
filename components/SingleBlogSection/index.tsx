@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import { BlogContext } from "../Pages/blogPage";
+import { BlogContext } from "../Pages/homePageBlogs";
 
 type Props = {
   id: number;

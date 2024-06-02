@@ -3,17 +3,13 @@ import React, { useState, createContext } from "react";
 import Blog from "@/components/Blog";
 import RelatedBlogs from "@/components/RelatedBlogs";
 
-// Define the shape of the context value
-interface BlogContextType {
-  id: number;
-  handler: (id: number) => void;
-}
-
 // Create the context with the appropriate type
 export const BlogContext = createContext<any>(0);
 
-const BlogPage = () => {
+const HomePageBlogs = () => {
   const [blogId, setBlogId] = useState(0);
+
+  console.log("Client Side Component");
 
   const updateBlogIdHandler = (id: number) => {
     setBlogId(id);
@@ -28,4 +24,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default HomePageBlogs;

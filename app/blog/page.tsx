@@ -1,4 +1,5 @@
 import React from "react";
+import BlogClientComponent from "@/components/BlogClientComponent";
 
 const Blog = async () => {
   const fetchPostsHandler = async () => {
@@ -13,16 +14,13 @@ const Blog = async () => {
     return fetchPosts;
   };
 
-  const posts = await fetchPostsHandler();
+  console.log("Server Side Component");
 
-  console.log("Blog Posts:", posts);
+  const posts = await fetchPostsHandler();
   return (
-    <>
-      {posts.length > 0 &&
-        posts.map((post: any) => {
-          return <h1 key={post.id}>{post.title}</h1>;
-        })}
-    </>
+    <div className=" p-8 rounded border flex flex-col gap-6">
+      <BlogClientComponent posts={posts} />
+    </div>
   );
 };
 
