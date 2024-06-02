@@ -1,8 +1,40 @@
-import React from "react";
-import ContentWrapper from "@/components/Layout/ContentWrapper";
+"use client";
+import React, { useState, useEffect } from "react";
 
-const index = () => {
-  return <h1>I am About</h1>;
+const About = () => {
+  const [posts, setPosts] = useState<any>();
+  const [loading, setLoading] = useState(true);
+
+  const fetchPostsHandler = async () => {
+    const fetchPosts = await fetch(
+      "https://jsonplaceholder.typicode.com/posts"
+    ).then((result) => {
+      const posts = result.json();
+
+      setLoading(false);
+
+      setPosts(posts);
+      // return posts;
+    });
+
+    // return fetchPosts;
+  };
+
+  useEffect(() => {
+    fetchPostsHandler();
+  }, []);
+  return (
+    <>
+      {loading ? (
+        <h1>Loading.......</h1>
+      ) : (
+        posts.length > 0 &&
+        posts.map((post: any) => {
+          return <h1 key={post.id}>{post.title}</h1>;
+        })
+      )}
+    </>
+  );
 };
 
-export default index;
+export default About;

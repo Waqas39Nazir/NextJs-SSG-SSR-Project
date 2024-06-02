@@ -3,15 +3,11 @@ import BlogClientComponent from "@/components/BlogClientComponent";
 
 const Blog = async () => {
   const fetchPostsHandler = async () => {
-    const fetchPosts = await fetch(
-      "https://jsonplaceholder.typicode.com/posts"
-    ).then((result) => {
+    await fetch("https://jsonplaceholder.typicode.com/posts").then((result) => {
       const posts = result.json();
 
       return posts;
     });
-
-    return fetchPosts;
   };
 
   console.log("Server Side Component");
