@@ -6,19 +6,18 @@ const About = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchPostsHandler = async () => {
-    const fetchPosts = await fetch(
-      "https://jsonplaceholder.typicode.com/posts"
-    ).then((result) => {
-      const posts = result.json();
+    await fetch("https://jsonplaceholder.typicode.com/posts").then(
+      async (result) => {
+        const posts = await result.json();
 
-      setLoading(false);
+        setLoading(false);
 
-      setPosts(posts);
-      // return posts;
-    });
-
-    // return fetchPosts;
+        setPosts(posts);
+      }
+    );
   };
+
+  console.log("Posts:", posts);
 
   useEffect(() => {
     fetchPostsHandler();
